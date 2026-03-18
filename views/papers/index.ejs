@@ -1,0 +1,26 @@
+<h1>Papers</h1>
+
+<form action="/papers/create" method="POST" enctype="multipart/form-data">
+  <input name="title" placeholder="Title" required />
+  <input name="authors" placeholder="Authors" required />
+  <input name="category" placeholder="Category" required />
+  <input name="year" placeholder="Year" required />
+  <input name="keywords" placeholder="keywords comma separated" />
+  <textarea name="abstract" placeholder="Abstract"></textarea>
+  <input type="file" name="pdf" required />
+  <button>Upload</button>
+</form>
+
+<hr>
+
+<% papers.forEach(p => { %>
+  <div>
+    <h3><%= p.title %></h3>
+    <p><%= p.category %></p>
+    <a href="/uploads/<%= p.pdf %>" target="_blank">View PDF</a>
+    <br>
+    <a href="/papers/delete/<%= p._id %>">Delete</a>
+  </div>
+<% }) %>
+
+<a href="/dashboard">Back</a>

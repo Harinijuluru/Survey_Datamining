@@ -1,0 +1,12 @@
+<h1>Dashboard</h1>
+
+<p>Total Papers: <%= totalPapers %></p>
+<p>Total Users: <%= totalUsers %></p>
+
+<h3>Recent Papers</h3>
+<% recent.forEach(p => { %>
+  <p><%= p.title %></p>
+<% }) %>
+
+<a href="/papers">Go to Papers</a>
+<a href="/logout">Logout</a>
